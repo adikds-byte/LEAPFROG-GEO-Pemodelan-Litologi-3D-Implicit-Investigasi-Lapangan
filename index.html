@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>LEAPFROG GEO &amp; BORLOG 3D COMMAND CENTRE PRO v12.0 — Pad C Extension &amp; Bendungan Tujuh Bukit</title>
+<title>LEAPFROG GEO &amp; BORLOG 3D COMMAND CENTRE PRO v12.3 — Pad C Extension &amp; Bendungan Tujuh Bukit</title>
 <meta name="description" content="Integrasi Profesional Leapfrog Geo 2026 Implicit 3D Lithology Modeling (FastRBF) &amp; Geotech Borlog Command Centre: 16 Borehole, 17 Test Pit, 9 Lab Material Properties Zone AC, Falling Head &amp; Lugeon Test, Strip Log SVG, Penampang 2D/3D &amp; Laporan Word Otomatis.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23041324'/%3E%3Cpolygon points='32,8 54,20 54,44 32,56 10,44 10,20' fill='%2310b981' opacity='0.85'/%3E%3Crect x='27' y='14' width='10' height='36' rx='3' fill='%23f59e0b'/%3E%3C/svg%3E">
 
@@ -323,6 +323,172 @@ html:not(.dark) .wr-card { background: #ffffff; border-color: #cbd5e1; }
   body { background: #fff !important; color: #000 !important; }
   #smartReportPaper { box-shadow: none !important; border: none !important; padding: 0 !important; max-width: 100% !important; }
 }
+
+/* ========================================================================= */
+/* SMARTPHONE & MOBILE UX ENHANCEMENTS (v12.3 PRO RESPONSIVE EDITION)        */
+/* ========================================================================= */
+@media (max-width: 768px) {
+  html { font-size: 15px; }
+  body { padding-bottom: 84px; }
+  .app-shell main { padding: 10px !important; gap: 12px !important; }
+  
+  /* Header compact & toggleable on mobile */
+  header { padding: 8px 10px !important; }
+  header h1 { font-size: 13.5px !important; line-height: 1.3 !important; }
+  .hdr-chip {
+    height: 36px !important;
+    padding: 0 11px !important;
+    font-size: 11px !important;
+    border-radius: 10px !important;
+  }
+  #mobileToolbarDrawer.collapsed-mobile {
+    display: none !important;
+  }
+  
+  /* Navigation Tabs: Large touch-friendly horizontal scroll pills */
+  nav.mobile-tabs-bar {
+    gap: 8px !important;
+    padding-top: 8px !important;
+    padding-bottom: 4px !important;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+  nav.mobile-tabs-bar .tab-btn {
+    padding: 9px 13px !important;
+    font-size: 11.5px !important;
+    min-height: 38px;
+    scroll-snap-align: start;
+    border-radius: 11px !important;
+  }
+
+  /* KPI Cards: High contrast, larger readable text on mobile */
+  #kpiStrip { gap: 8px !important; }
+  #kpiStrip .cmd-card { padding: 11px !important; }
+  #kpiStrip .cmd-card > div:first-child { font-size: 10px !important; }
+  #kpiStrip .cmd-card > div:nth-child(2) { font-size: 15px !important; line-height: 1.25 !important; }
+  #kpiStrip .cmd-card span { font-size: 10px !important; white-space: normal !important; line-height: 1.3; }
+
+  /* 3D Viewport & Charts height tuned for mobile portrait */
+  #leapfrog3dCanvas { height: 310px !important; }
+  #borlogGisMap, #windyIframe { height: 330px !important; }
+  
+  /* Form inputs & sliders touch ergonomics */
+  .inp, select.inp, input.inp {
+    min-height: 38px !important;
+    font-size: 12.5px !important;
+    padding: 7px 10px !important;
+  }
+  input[type="range"] {
+    height: 28px !important;
+  }
+  input[type="checkbox"] {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  /* Tables: Clear readable cells with smooth horizontal scroll & sticky first col */
+  table.eng { font-size: 11.5px !important; }
+  table.eng th { font-size: 10px !important; padding: 8px 9px !important; }
+  table.eng td { padding: 8px 9px !important; }
+  table.eng th:first-child,
+  table.eng td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 3;
+    background: #07192e;
+    box-shadow: 2px 0 6px rgba(0,0,0,0.45);
+  }
+  html:not(.dark) table.eng th:first-child,
+  html:not(.dark) table.eng td:first-child {
+    background: #e2f5ee;
+  }
+
+  /* Smart Report Paper padding on mobile */
+  #smartReportPaper { padding: 14px !important; font-size: 12px !important; }
+  #smartReportPaper h2 { font-size: 14px !important; }
+
+  /* Floating Bottom Controls & AI Drawer */
+  #dockEarthCtrl {
+    bottom: 12px !important;
+    left: 10px !important;
+    padding: 5px 10px !important;
+  }
+  #dockEarthCtrl button {
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 14px !important;
+  }
+  #chatTriggerBtn {
+    bottom: 12px !important;
+    right: 12px !important;
+    width: 52px !important;
+    height: 52px !important;
+  }
+  #aiDrawer {
+    bottom: 72px !important;
+    right: 8px !important;
+    left: 8px !important;
+    width: auto !important;
+    height: 72vh !important;
+  }
+
+  /* Boot & Screensaver text scaling */
+  #lfbBootOverlay { padding: 12px !important; }
+  #lfbBootOverlay h1 { font-size: 16px !important; line-height: 1.3 !important; }
+  #ssClock { font-size: 42px !important; }
+  #ssDate { font-size: 12px !important; }
+  #ssQuoteCard { padding: 12px !important; margin: 0 8px !important; }
+  #ssAr { font-size: 18px !important; line-height: 1.6 !important; }
+  #ssTx { font-size: 12px !important; }
+}
+
+
+/* ========================================================================= */
+/* JARVIS AI SUPER-CHATBOT ANIMATIONS & VISUAL CARDS (v12.3 PRO)             */
+/* ========================================================================= */
+@keyframes chatCardPop {
+  0% { opacity: 0; transform: translateY(12px) scale(0.96); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes chatBorderGlow {
+  0%, 100% { box-shadow: 0 0 12px rgba(16, 185, 129, 0.25), inset 0 0 8px rgba(6, 182, 212, 0.12); }
+  50% { box-shadow: 0 0 22px rgba(6, 182, 212, 0.45), inset 0 0 12px rgba(245, 158, 11, 0.16); }
+}
+@keyframes typingBounce {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.35; }
+  40% { transform: scale(1.15); opacity: 1; }
+}
+@keyframes barGrow {
+  from { width: 0%; }
+}
+.ai-msg-anim {
+  animation: chatCardPop 0.42s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.ai-card-rich {
+  background: linear-gradient(145deg, rgba(7, 24, 42, 0.96), rgba(4, 15, 28, 0.98));
+  border: 1.5px solid rgba(16, 185, 129, 0.55);
+  border-radius: 14px;
+  padding: 12px;
+  animation: chatCardPop 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards, chatBorderGlow 4s ease-in-out infinite;
+}
+.ai-typing-dot {
+  width: 7px; height: 7px; border-radius: 50%; display: inline-block;
+  background: linear-gradient(135deg, #10b981, #22d3ee);
+  animation: typingBounce 1.2s infinite ease-in-out;
+}
+.ai-typing-dot:nth-child(2) { animation-delay: 0.18s; }
+.ai-typing-dot:nth-child(3) { animation-delay: 0.36s; }
+.ai-viz-bar {
+  height: 8px; border-radius: 999px;
+  animation: barGrow 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.ai-src-pill {
+  display: inline-flex; align-items: center; justify-content: center; gap: 4px;
+  padding: 5px 7px; border-radius: 8px; font-size: 9.5px; font-weight: 800;
+  transition: transform 0.15s, filter 0.15s; text-decoration: none;
+}
+.ai-src-pill:hover { transform: translateY(-2px); filter: brightness(1.18); }
+
 </style>
 </head>
 <body class="min-h-screen flex flex-col selection:bg-emerald-500 selection:text-slate-950">
@@ -338,7 +504,7 @@ html:not(.dark) .wr-card { background: #ffffff; border-color: #cbd5e1; }
       <span class="bg-sky-900/90 text-sky-200 border border-sky-500/50 px-2.5 py-0.5 rounded font-bold">16 BOREHOLE · 17 TEST PIT · 9 LAB ZONE AC · LUGEON</span>
     </div>
     <h1 class="font-tech text-lg sm:text-2xl md:text-3xl font-black tracking-wider shimmer-text uppercase">
-      LEAPFROG GEO &amp; BORLOG 3D COMMAND CENTRE PRO v12.0
+      LEAPFROG GEO &amp; BORLOG 3D COMMAND CENTRE PRO v12.3
     </h1>
     <p class="font-mono text-[10.5px] sm:text-xs text-emerald-200/95">
       Pemodelan Geologi 3D Litologi Implicit (FastRBF), Drillhole Desurveying, Strip Log Stratigrafi &amp; Evaluasi Pad C Extension Tujuh Bukit
@@ -392,7 +558,7 @@ html:not(.dark) .wr-card { background: #ffffff; border-color: #cbd5e1; }
       </button>
     </div>
     <p class="text-center font-mono text-[9.5px] text-slate-400">
-      Pengembang: <b class="text-amber-300">Ir. Mohamad Hartadi, S.T.</b> · Konsultan: <b class="text-emerald-300">PT. Agrinas Palma Nusantara / PT. Cipta Harmoni Selaras</b>
+      Pengembang: <b class="text-amber-300">Ir. Mohamad Hartadi, S.T.</b> · Konsultan: <b class="text-emerald-300">PT. Cipta Harmoni Selaras</b>
     </p>
   </div>
 </div>
@@ -468,7 +634,7 @@ html:not(.dark) .wr-card { background: #ffffff; border-color: #cbd5e1; }
               <span class="px-2 py-0.5 rounded bg-sky-900/90 text-sky-200 border border-sky-500/50 text-[10px] font-mono font-bold">16 BOREHOLE · 17 TEST PIT · 9 LAB ZONE AC · 8 WELL</span>
             </div>
             <h1 class="font-tech text-sm sm:text-base md:text-lg font-black tracking-wider uppercase mt-0.5 shimmer-text">
-              LEAPFROG GEO &amp; BORLOG 3D COMMAND CENTRE <span class="text-amber-400 text-xs" style="-webkit-text-fill-color:#fbbf24">v12.0 PRO</span> — Pemodelan Litologi 3D Implicit &amp; Investigasi Lapangan
+              LEAPFROG GEO &amp; BORLOG 3D COMMAND CENTRE <span class="text-amber-400 text-xs" style="-webkit-text-fill-color:#fbbf24">v12.3 PRO</span> — Pemodelan Litologi 3D Implicit &amp; Investigasi Lapangan
             </h1>
             <p class="hidden md:block text-[10px] font-mono text-slate-300">
               FastRBF 3D Geological Model &bull; Drillhole Desurveying &bull; Strip Log Stratigrafi SVG &bull; Korelasi Penampang &bull; Lab Zone AC &amp; Backfill &bull; Falling Head &amp; Lugeon &bull; WebGIS &bull; 12 Paket Word
@@ -476,19 +642,27 @@ html:not(.dark) .wr-card { background: #ffffff; border-color: #cbd5e1; }
           </div>
         </div>
 
-        <!-- Real-Time Clock Masehi + Hijriyah -->
-        <div class="flex items-center bg-slate-950/90 border border-emerald-500/45 px-3.5 py-1.5 rounded-xl keepwhite self-start lg:self-auto shrink-0">
+        <!-- Real-Time Clock Masehi + Hijriyah + Mobile Toolbar Toggle -->
+        <div class="flex items-center justify-between sm:justify-start gap-2 w-full lg:w-auto">
+        <div class="flex items-center bg-slate-950/90 border border-emerald-500/45 px-3 py-1.5 rounded-xl keepwhite flex-1 sm:flex-initial shrink-0">
           <i class="fa-regular fa-clock text-emerald-400 animate-pulse text-lg mr-2.5"></i>
           <div class="font-mono leading-tight">
             <div id="topDate" class="text-[10px] font-bold text-sky-200 uppercase">—</div>
             <div id="topHijri" class="text-[10px] font-bold text-emerald-300">—</div>
-            <div id="topTime" class="text-sm sm:text-base font-black font-tech tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-300 to-amber-400">00:00:00 WIB</div>
+            <div id="topTime" class="text-xs sm:text-base font-black font-tech tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-300 to-amber-400">00:00:00 WIB</div>
           </div>
+        </div>
+        <button type="button" onclick="toggleAppFullscreen()" class="btn-fullscreen-toggle px-3 py-2 rounded-xl bg-cyan-950/90 hover:bg-cyan-800 border border-cyan-400/70 text-cyan-200 font-mono text-[11px] font-black flex items-center gap-1.5 shrink-0 cursor-pointer" title="Layar Penuh (Fullscreen)">
+          <i class="fa-solid fa-expand fs-icon"></i><span class="hidden sm:inline fs-label">Fullscreen</span>
+        </button>
+        <button type="button" id="btnMobileMenuToggle" onclick="toggleMobileToolbar()" class="md:hidden px-3 py-2 rounded-xl bg-emerald-900/90 border border-emerald-400 text-emerald-100 font-mono text-[11px] font-black flex items-center gap-1.5 shrink-0 cursor-pointer">
+          <i class="fa-solid fa-sliders"></i><span>Menu &amp; Ekspor</span>
+        </button>
         </div>
       </div>
 
       <!-- Preset Filters & Action Toolbar -->
-      <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-emerald-900/60 font-mono text-[10.5px]">
+      <div id="mobileToolbarDrawer" class="collapsed-mobile flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-emerald-900/60 font-mono text-[10.5px]">
         <div class="flex flex-wrap items-center gap-1.5">
           <button id="pr_padc13" onclick="applyZonePreset('padc13')" class="hdr-chip bg-emerald-900 text-white border border-emerald-400 font-bold"><i class="fa-solid fa-layer-group text-amber-300"></i>1. Semua Pad C Ext (13 BH)</button>
           <button id="pr_utara" onclick="applyZonePreset('utara')" class="hdr-chip bg-slate-800 text-slate-200 border border-slate-700 font-bold"><i class="fa-solid fa-mountain text-cyan-400"></i>2. Zona Utara &amp; Timbunan (4 BH)</button>
@@ -504,12 +678,13 @@ html:not(.dark) .wr-card { background: #ffffff; border-color: #cbd5e1; }
           <button onclick="toggleScreensaver(true)" class="hdr-chip bg-indigo-950 text-indigo-200 border border-indigo-400/60 font-bold"><i class="fa-solid fa-earth-asia text-emerald-400"></i>Screensaver 3D</button>
           <button onclick="openModal('mApps')" class="hdr-chip bg-gradient-to-r from-amber-500 to-emerald-500 text-slate-950 font-black"><i class="fa-solid fa-cubes-stacked"></i>My Aplikasi (81)</button>
           <button onclick="openModal('mCreator')" class="hdr-chip bg-slate-800 text-amber-300 border border-amber-500/50 font-bold"><i class="fa-solid fa-user-tie"></i>Dev</button>
+          <button type="button" onclick="toggleAppFullscreen()" class="btn-fullscreen-toggle hdr-chip bg-cyan-950 hover:bg-cyan-900 text-cyan-300 border border-cyan-500/60 font-bold" title="Layar Penuh (Fullscreen)"><i class="fa-solid fa-expand fs-icon"></i><span class="fs-label">Fullscreen</span></button>
           <button onclick="toggleTheme()" class="hdr-chip bg-slate-900 text-amber-400 border border-slate-700" title="Ubah Tema Gelap/Terang"><i id="themeIcon" class="fa-solid fa-moon"></i></button>
         </div>
       </div>
 
       <!-- 9 NAVIGATION TABS (LEAPFROG 3D + BORLOG + LAB ZONE AC + WORD) -->
-      <nav class="flex gap-1.5 overflow-x-auto pt-1.5 border-t border-slate-800/80 font-mono text-xs" style="scrollbar-width:thin">
+      <nav id="mainNavTabs" class="mobile-tabs-bar flex gap-1.5 overflow-x-auto pt-1.5 border-t border-slate-800/80 font-mono text-xs" style="scrollbar-width:thin">
         <button onclick="switchMainTab('tab01')" id="btn-tab01" class="tab-btn active"><i class="fa-solid fa-cubes text-emerald-300 mr-1"></i>01 · Leapfrog 3D Litologi Implicit (FastRBF)</button>
         <button onclick="switchMainTab('tab02')" id="btn-tab02" class="tab-btn"><i class="fa-solid fa-bore-hole text-cyan-300 mr-1"></i>02 · Strip Log Stratigrafi SVG &amp; Run (16 BH)</button>
         <button onclick="switchMainTab('tab03')" id="btn-tab03" class="tab-btn"><i class="fa-solid fa-diagram-project text-amber-300 mr-1"></i>03 · Korelasi Lintas Bor &amp; Desain Fondasi</button>
@@ -663,7 +838,7 @@ html:not(.dark) .wr-card { background: #ffffff; border-color: #cbd5e1; }
       <div class="cmd-card p-3.5 flex flex-wrap items-center justify-between gap-3">
         <div class="flex flex-wrap items-center gap-2">
           <span class="text-amber-300 font-black uppercase"><i class="fa-solid fa-bore-hole mr-1"></i>Pilih Titik Bor (16 BH):</span>
-          <select id="bhSelect" class="inp" style="width:310px" onchange="selectBorehole(this.value)"></select>
+          <select id="bhSelect" class="inp w-full sm:w-[310px]" onchange="selectBorehole(this.value)"></select>
           <button type="button" onclick="addRunModalOpen()" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-black text-[11px] cursor-pointer"><i class="fa-solid fa-plus mr-1"></i>Tambah Run / Lapisan</button>
         </div>
         <div id="bhMetaBadges" class="flex flex-wrap gap-1.5"></div>
@@ -675,6 +850,7 @@ html:not(.dark) .wr-card { background: #ffffff; border-color: #cbd5e1; }
             <h3 class="font-tech text-xs sm:text-sm font-black text-amber-300">GEOTECHNICAL BOREHOLE LOG (KOLOM STRATIGRAFI SVG &amp; PARAMETER)</h3>
             <span id="svgHoleBadge" class="pill info">—</span>
           </div>
+          <div class="md:hidden text-[10.5px] text-amber-300 font-mono mb-1"><i class="fa-solid fa-arrows-left-right mr-1"></i>Geser ke kanan/kiri untuk melihat seluruh kolom Borlog SVG</div>
           <div class="bg-white rounded-xl p-2 overflow-x-auto border-2 border-emerald-500/40 shadow-inner">
             <svg id="boreholeSvg" viewBox="0 0 840 720" class="w-full min-w-[660px] h-auto block"></svg>
           </div>
@@ -717,6 +893,7 @@ html:not(.dark) .wr-card { background: #ffffff; border-color: #cbd5e1; }
             <button type="button" onclick="renderCrossSection('dam')" id="xs_dam" class="px-2.5 py-1 rounded bg-slate-800 text-slate-200 border border-slate-700 font-bold text-[10.5px] cursor-pointer">Transek Bendungan Dam 1 – Dam 3 – Dam 5</button>
           </div>
         </div>
+        <div class="md:hidden text-[10.5px] text-amber-300 font-mono mb-1"><i class="fa-solid fa-arrows-left-right mr-1"></i>Geser ke kanan/kiri untuk melihat seluruh penampang korelasi</div>
         <div class="bg-slate-950 rounded-xl p-2 border border-emerald-800/60 overflow-x-auto">
           <svg id="crossSectionSvg" viewBox="0 0 960 400" class="w-full min-w-[700px] h-auto block"></svg>
         </div>
@@ -1013,7 +1190,7 @@ html:not(.dark) .wr-card { background: #ffffff; border-color: #cbd5e1; }
 
   <!-- FOOTER -->
   <footer class="mt-auto py-3 px-4 bg-slate-950/90 border-t border-emerald-500/30 text-center font-mono text-[10.5px] text-slate-400 no-print">
-    © 2026 <b>LEAPFROG GEO &amp; BORLOG 3D COMMAND CENTRE PRO v12.0</b> · Dikembangkan oleh <b class="text-amber-300">Ir. Mohamad Hartadi, S.T.</b> · Konsultan: <b class="text-emerald-300">PT. Agrinas Palma Nusantara / PT. Cipta Harmoni Selaras</b><br>
+    © 2026 <b>LEAPFROG GEO &amp; BORLOG 3D COMMAND CENTRE PRO v12.3</b> · Dikembangkan oleh <b class="text-amber-300">Ir. Mohamad Hartadi, S.T.</b> · Konsultan: <b class="text-emerald-300">PT. Cipta Harmoni Selaras</b><br>
     Blog: <a href="https://newbieonline7.blogspot.com/" target="_blank" rel="noopener" class="text-sky-300 underline">newbieonline7.blogspot.com</a> ·
     Facebook: <a href="https://www.facebook.com/hartadi.kds" target="_blank" rel="noopener" class="text-sky-300 underline">facebook.com/hartadi.kds</a> ·
     WhatsApp: <a href="https://wa.me/6282231036047" target="_blank" rel="noopener" class="text-emerald-300 underline">0822-3103-6047</a>
@@ -1047,7 +1224,7 @@ html:not(.dark) .wr-card { background: #ffffff; border-color: #cbd5e1; }
       <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 via-cyan-500 to-amber-500 flex items-center justify-center text-2xl text-slate-950 font-black font-tech shrink-0">MH</div>
       <div>
         <div class="font-tech font-black text-lg">Ir. Mohamad Hartadi, S.T.</div>
-        <div class="font-mono text-xs text-emerald-300 font-bold">Konsultan: PT. Agrinas Palma Nusantara / PT. Cipta Harmoni Selaras</div>
+        <div class="font-mono text-xs text-emerald-300 font-bold">Konsultan: PT. Cipta Harmoni Selaras</div>
         <div class="font-mono text-[11px] text-sky-300 mt-0.5">Civil, Geotechnical &amp; Dam Safety Engineer · 3D Geological Modeling &amp; AI Developer</div>
       </div>
     </div>
@@ -1097,25 +1274,36 @@ html:not(.dark) .wr-card { background: #ffffff; border-color: #cbd5e1; }
   <i class="fa-solid fa-robot"></i>
 </button>
 
-<div id="aiDrawer" class="fixed bottom-20 right-4 z-[1051] w-[min(450px,calc(100vw-24px))] h-[min(600px,76vh)] rounded-2xl border-2 border-emerald-400/60 bg-slate-950/97 shadow-2xl hidden flex-col overflow-hidden keepwhite no-print font-mono text-xs">
-  <div class="px-3.5 py-2.5 bg-gradient-to-r from-emerald-950 via-sky-900 to-amber-900 flex items-center justify-between border-b border-emerald-500/50">
-    <div class="flex items-center gap-2">
-      <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
-      <div class="font-tech text-xs font-black text-white">JARVIS AI · LEAPFROG 3D &amp; BORLOG</div>
+<div id="aiDrawer" class="fixed bottom-20 right-4 z-[1051] w-[min(500px,calc(100vw-20px))] h-[min(650px,80vh)] rounded-2xl border-2 border-emerald-400/75 bg-slate-950/97 shadow-[0_20px_60px_rgba(0,0,0,0.9)] hidden flex-col overflow-hidden keepwhite no-print font-mono text-xs">
+  <div class="px-3.5 py-2.5 bg-gradient-to-r from-emerald-950 via-cyan-950 to-amber-950 flex items-center justify-between border-b border-emerald-500/50">
+    <div class="flex items-center gap-2.5">
+      <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-emerald-400 to-cyan-400 text-slate-950 flex items-center justify-center font-black shadow">
+        <i class="fa-solid fa-robot"></i>
+      </div>
+      <div>
+        <div class="font-tech text-xs font-black text-white flex items-center gap-1.5">
+          <span>JARVIS AI SUPER-ASSISTANT</span>
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        </div>
+        <div class="text-[9.5px] text-emerald-300">Geoteknik, Geologi 3D &amp; Pengetahuan Umum + Wikipedia/AI</div>
+      </div>
     </div>
-    <button type="button" onclick="toggleChat()" class="text-slate-200 hover:text-amber-300 font-bold cursor-pointer">✕</button>
+    <div class="flex items-center gap-1.5">
+      <button type="button" onclick="clearChatHistory()" class="px-2 py-1 rounded-lg bg-slate-900/90 hover:bg-rose-900/70 border border-slate-700 text-slate-300 hover:text-white text-[10px] cursor-pointer" title="Bersihkan Riwayat Chat"><i class="fa-solid fa-trash-can"></i></button>
+      <button type="button" onclick="toggleChat()" class="w-7 h-7 rounded-lg bg-slate-900/90 hover:bg-amber-600 border border-slate-700 text-slate-200 hover:text-slate-950 font-bold cursor-pointer">✕</button>
+    </div>
   </div>
-  <div id="chatBox" class="flex-1 overflow-y-auto p-3 space-y-2.5 text-slate-100"></div>
-  <div class="px-2.5 py-1.5 flex flex-wrap gap-1 bg-slate-900/80 border-t border-emerald-900/50" id="chatChips"></div>
-  <div class="p-2.5 flex gap-2 border-t border-emerald-800/60 bg-slate-950">
-    <input id="chatIn" class="inp flex-1" placeholder="Tanya FastRBF 3D, BH-01R, GTH-14-126, Lab Zone AC, Lugeon…" onkeydown="if(event.key==='Enter')sendChat()">
-    <button type="button" class="px-3 py-1.5 rounded-lg bg-emerald-500 text-slate-950 font-black cursor-pointer" onclick="sendChat()"><i class="fa-solid fa-paper-plane"></i></button>
+  <div id="chatBox" class="flex-1 overflow-y-auto p-3.5 space-y-3 text-slate-100 scroll-smooth"></div>
+  <div class="px-2.5 py-2 flex gap-1.5 overflow-x-auto bg-slate-900/90 border-t border-emerald-900/60" style="scrollbar-width:thin" id="chatChips"></div>
+  <div class="p-2.5 flex gap-2 border-t border-emerald-700/60 bg-slate-950">
+    <input id="chatIn" class="inp flex-1" placeholder="Tanya apa saja: FastRBF 3D, Borlog, Sains, Sejarah, AI…" onkeydown="if(event.key==='Enter')sendChat()">
+    <button type="button" class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-emerald-400 to-cyan-400 hover:brightness-110 text-slate-950 font-black cursor-pointer shadow" onclick="sendChat()"><i class="fa-solid fa-paper-plane"></i></button>
   </div>
 </div>
 
 <script>
 /* ============================================================================
-   LEAPFROG GEO & BORLOG 3D COMMAND CENTRE PRO v12.0 — COMPLETE DATASET & ENGINE
+   LEAPFROG GEO & BORLOG 3D COMMAND CENTRE PRO v12.3 — COMPLETE DATASET & ENGINE
    Data Sinkron dari Google Drive Proyek Tujuh Bukit (Pad C Extension & Dam 1-6A)
    ============================================================================ */
 const $ = id => document.getElementById(id);
@@ -2467,7 +2655,7 @@ function buildSmartWordReport(mode) {
       <li><b>Permeabilitas &amp; Manajemen Air Permukaan:</b> Uji <i>Falling Head</i> menghasilkan <i>k</i> = <b>1,00×10⁻¹² – 4,92×10⁻⁵ m/s</b> dan uji <i>Packer Lugeon</i> menghasilkan <b>0,014 – 0,308 Lu</b> (kedap air). Saluran pengelak (<i>diversion drain</i>) didesain untuk kala ulang hujan <b>100-tahun (100-yr ARI)</b> dengan kemiringan dasar pad 2% dan lapisan ganda geomembran LLDPE + interlift liner tiap 3 lift (maksimum head freatik 30 m).</li>
       <li><b>Stabilitas Bendungan Dam 5 &amp; 6A:</b> Stabilitas statik memenuhi kriteria aman (FoS 1,959–4,210), gempa OBE aman (FoS 1,239–3,308), deformasi gempa MDE 5,0 cm (&lt; batas 200 cm), dan gradien erosi internal aman (SF 3,07–4,23).</li>
     </ul>
-    <p style="margin-top:14px;font-size:9pt;color:#475569;border-top:1px solid #cbd5e1;padding-top:6px">Disusun melalui LEAPFROG GEO &amp; BORLOG 3D COMMAND CENTRE PRO v12.0 · <b>Ir. Mohamad Hartadi, S.T.</b> · https://newbieonline7.blogspot.com/ · WA 0822-3103-6047</p>
+    <p style="margin-top:14px;font-size:9pt;color:#475569;border-top:1px solid #cbd5e1;padding-top:6px">Disusun melalui LEAPFROG GEO &amp; BORLOG 3D COMMAND CENTRE PRO v12.3 · <b>Ir. Mohamad Hartadi, S.T.</b> · https://newbieonline7.blogspot.com/ · WA 0822-3103-6047</p>
   `;
 }
 
@@ -2572,12 +2760,178 @@ const WR_PACKAGES = [
 ];
 
 function wrBuildDoc(r) {
-  const cred = '<p style="margin-top:20px;font-size:9pt;color:#475569;border-top:1px solid #cbd5e1;padding-top:8px">Disusun melalui LEAPFROG GEO &amp; BORLOG 3D COMMAND CENTRE PRO v12.0 &middot; <b>Ir. Mohamad Hartadi, S.T.</b> (Konsultan: PT. Agrinas Palma Nusantara / PT. Cipta Harmoni Selaras) &middot; https://newbieonline7.blogspot.com/ &middot; WA 0822-3103-6047</p>';
+  const cred = '<p style="margin-top:20px;font-size:9pt;color:#475569;border-top:1px solid #cbd5e1;padding-top:8px">Disusun melalui LEAPFROG GEO &amp; BORLOG 3D COMMAND CENTRE PRO v12.3 &middot; <b>Ir. Mohamad Hartadi, S.T.</b> (Konsultan: PT. Cipta Harmoni Selaras) &middot; https://newbieonline7.blogspot.com/ &middot; WA 0822-3103-6047</p>';
   const kpi = '<table width="100%" cellspacing="6"><tr>' + r.kpi.map(k => `<td align="center" style="background:${k[2]};color:#fff;padding:10px;border-radius:6px"><div style="font-size:8pt">${k[0]}</div><div style="font-size:14pt;font-weight:bold">${k[1]}</div></td>`).join('') + '</tr></table>';
   const flow = '<table width="100%" cellspacing="4"><tr>' + r.flow.map((f, i) => `<td align="center" style="background:#ecfdf5;border:1px solid #059669;padding:7px;font-size:9pt"><b style="color:#047857">${i + 1}.</b><br>${f}</td>`).join('<td align="center" style="color:#059669;font-size:15pt">&rarr;</td>') + '</tr></table>';
   const mx = Math.max(...r.chart.map(c => c[1]), 0.0001);
   const bars = '<table width="100%" cellspacing="2">' + r.chart.map(c => `<tr><td width="26%" style="font-size:9pt">${c[0]}</td><td width="56%"><div style="background:#059669;height:13px;width:${Math.max(4, c[1] / mx * 100)}%">&nbsp;</div></td><td width="18%" style="font-size:9pt"><b>${Number(c[1]).toLocaleString('id-ID')}</b></td></tr>`).join('') + '</table>';
-  return `<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>${r.t}</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.5;color:#0f172a}h1{color:#064e3b;font-size:17pt;border-bottom:3px solid #10b981;padding-bottom:4px}h2{color:#047857;font-size:12.5pt;margin-top:14px}li{margin-bottom:4px}</style></head><body>
+  return `<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>${r.t}</title><style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt;line-height:1.5;color:#0f172a}h1{color:#064e3b;font-size:17pt;border-bottom:3px solid #10b981;padding-bottom:4px}h2{color:#047857;font-size:12.5pt;margin-top:14px}li{margin-bottom:4px}
+/* ========================================================================= */
+/* SMARTPHONE & MOBILE UX ENHANCEMENTS (v12.3 PRO RESPONSIVE EDITION)        */
+/* ========================================================================= */
+@media (max-width: 768px) {
+  html { font-size: 15px; }
+  body { padding-bottom: 84px; }
+  .app-shell main { padding: 10px !important; gap: 12px !important; }
+  
+  /* Header compact & toggleable on mobile */
+  header { padding: 8px 10px !important; }
+  header h1 { font-size: 13.5px !important; line-height: 1.3 !important; }
+  .hdr-chip {
+    height: 36px !important;
+    padding: 0 11px !important;
+    font-size: 11px !important;
+    border-radius: 10px !important;
+  }
+  #mobileToolbarDrawer.collapsed-mobile {
+    display: none !important;
+  }
+  
+  /* Navigation Tabs: Large touch-friendly horizontal scroll pills */
+  nav.mobile-tabs-bar {
+    gap: 8px !important;
+    padding-top: 8px !important;
+    padding-bottom: 4px !important;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+  nav.mobile-tabs-bar .tab-btn {
+    padding: 9px 13px !important;
+    font-size: 11.5px !important;
+    min-height: 38px;
+    scroll-snap-align: start;
+    border-radius: 11px !important;
+  }
+
+  /* KPI Cards: High contrast, larger readable text on mobile */
+  #kpiStrip { gap: 8px !important; }
+  #kpiStrip .cmd-card { padding: 11px !important; }
+  #kpiStrip .cmd-card > div:first-child { font-size: 10px !important; }
+  #kpiStrip .cmd-card > div:nth-child(2) { font-size: 15px !important; line-height: 1.25 !important; }
+  #kpiStrip .cmd-card span { font-size: 10px !important; white-space: normal !important; line-height: 1.3; }
+
+  /* 3D Viewport & Charts height tuned for mobile portrait */
+  #leapfrog3dCanvas { height: 310px !important; }
+  #borlogGisMap, #windyIframe { height: 330px !important; }
+  
+  /* Form inputs & sliders touch ergonomics */
+  .inp, select.inp, input.inp {
+    min-height: 38px !important;
+    font-size: 12.5px !important;
+    padding: 7px 10px !important;
+  }
+  input[type="range"] {
+    height: 28px !important;
+  }
+  input[type="checkbox"] {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  /* Tables: Clear readable cells with smooth horizontal scroll & sticky first col */
+  table.eng { font-size: 11.5px !important; }
+  table.eng th { font-size: 10px !important; padding: 8px 9px !important; }
+  table.eng td { padding: 8px 9px !important; }
+  table.eng th:first-child,
+  table.eng td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 3;
+    background: #07192e;
+    box-shadow: 2px 0 6px rgba(0,0,0,0.45);
+  }
+  html:not(.dark) table.eng th:first-child,
+  html:not(.dark) table.eng td:first-child {
+    background: #e2f5ee;
+  }
+
+  /* Smart Report Paper padding on mobile */
+  #smartReportPaper { padding: 14px !important; font-size: 12px !important; }
+  #smartReportPaper h2 { font-size: 14px !important; }
+
+  /* Floating Bottom Controls & AI Drawer */
+  #dockEarthCtrl {
+    bottom: 12px !important;
+    left: 10px !important;
+    padding: 5px 10px !important;
+  }
+  #dockEarthCtrl button {
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 14px !important;
+  }
+  #chatTriggerBtn {
+    bottom: 12px !important;
+    right: 12px !important;
+    width: 52px !important;
+    height: 52px !important;
+  }
+  #aiDrawer {
+    bottom: 72px !important;
+    right: 8px !important;
+    left: 8px !important;
+    width: auto !important;
+    height: 72vh !important;
+  }
+
+  /* Boot & Screensaver text scaling */
+  #lfbBootOverlay { padding: 12px !important; }
+  #lfbBootOverlay h1 { font-size: 16px !important; line-height: 1.3 !important; }
+  #ssClock { font-size: 42px !important; }
+  #ssDate { font-size: 12px !important; }
+  #ssQuoteCard { padding: 12px !important; margin: 0 8px !important; }
+  #ssAr { font-size: 18px !important; line-height: 1.6 !important; }
+  #ssTx { font-size: 12px !important; }
+}
+
+
+/* ========================================================================= */
+/* JARVIS AI SUPER-CHATBOT ANIMATIONS & VISUAL CARDS (v12.3 PRO)             */
+/* ========================================================================= */
+@keyframes chatCardPop {
+  0% { opacity: 0; transform: translateY(12px) scale(0.96); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes chatBorderGlow {
+  0%, 100% { box-shadow: 0 0 12px rgba(16, 185, 129, 0.25), inset 0 0 8px rgba(6, 182, 212, 0.12); }
+  50% { box-shadow: 0 0 22px rgba(6, 182, 212, 0.45), inset 0 0 12px rgba(245, 158, 11, 0.16); }
+}
+@keyframes typingBounce {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.35; }
+  40% { transform: scale(1.15); opacity: 1; }
+}
+@keyframes barGrow {
+  from { width: 0%; }
+}
+.ai-msg-anim {
+  animation: chatCardPop 0.42s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.ai-card-rich {
+  background: linear-gradient(145deg, rgba(7, 24, 42, 0.96), rgba(4, 15, 28, 0.98));
+  border: 1.5px solid rgba(16, 185, 129, 0.55);
+  border-radius: 14px;
+  padding: 12px;
+  animation: chatCardPop 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards, chatBorderGlow 4s ease-in-out infinite;
+}
+.ai-typing-dot {
+  width: 7px; height: 7px; border-radius: 50%; display: inline-block;
+  background: linear-gradient(135deg, #10b981, #22d3ee);
+  animation: typingBounce 1.2s infinite ease-in-out;
+}
+.ai-typing-dot:nth-child(2) { animation-delay: 0.18s; }
+.ai-typing-dot:nth-child(3) { animation-delay: 0.36s; }
+.ai-viz-bar {
+  height: 8px; border-radius: 999px;
+  animation: barGrow 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.ai-src-pill {
+  display: inline-flex; align-items: center; justify-content: center; gap: 4px;
+  padding: 5px 7px; border-radius: 8px; font-size: 9.5px; font-weight: 800;
+  transition: transform 0.15s, filter 0.15s; text-decoration: none;
+}
+.ai-src-pill:hover { transform: translateY(-2px); filter: brightness(1.18); }
+
+</style></head><body>
   <p style="font-size:9pt;color:#64748b">PT BUMI SUKSESINDO &middot; LEAPFROG GEO 2026 &amp; GEOTECH BORLOG &mdash; Pad C Extension &amp; Bendungan Tujuh Bukit</p>
   <h1>Laporan ${r.id}. ${r.t}</h1><p><i>${r.d}</i></p>
   <h2>A. Ringkasan Indikator Utama (KPI)</h2>${kpi}
@@ -2773,11 +3127,55 @@ function saveNewRun() {
 }
 
 /* 12. NAVIGATION TABS, MODALS, THEME, CLOCK & WISDOMS */
+
+
+function toggleAppFullscreen() {
+  const docEl = document.documentElement;
+  const isFs = document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement;
+  if (!isFs) {
+    const req = docEl.requestFullscreen || docEl.webkitRequestFullscreen || docEl.msRequestFullscreen;
+    if (req) {
+      Promise.resolve(req.call(docEl)).catch(() => {
+        toast('Browser membatasi fullscreen otomatis; coba ketuk ikon sekali lagi.');
+      });
+    }
+  } else {
+    const ex = document.exitFullscreen || document.webkitExitFullscreen || document.msExitFullscreen;
+    if (ex) Promise.resolve(ex.call(document)).catch(() => {});
+  }
+}
+
+function syncFullscreenButtons() {
+  const isFs = Boolean(document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement);
+  document.querySelectorAll('.btn-fullscreen-toggle .fs-icon').forEach(ic => {
+    ic.className = 'fa-solid ' + (isFs ? 'fa-compress' : 'fa-expand') + ' fs-icon';
+  });
+  document.querySelectorAll('.btn-fullscreen-toggle .fs-label').forEach(lb => {
+    lb.textContent = isFs ? 'Exit Full' : 'Fullscreen';
+  });
+}
+['fullscreenchange', 'webkitfullscreenchange', 'msfullscreenchange'].forEach(ev => {
+  document.addEventListener(ev, syncFullscreenButtons);
+});
+
+function toggleMobileToolbar() {
+  const drawer = $('mobileToolbarDrawer');
+  const btn = $('btnMobileMenuToggle');
+  if (!drawer) return;
+  const isHidden = drawer.classList.toggle('collapsed-mobile');
+  if (btn) {
+    btn.innerHTML = isHidden
+      ? '<i class="fa-solid fa-sliders"></i><span>Menu &amp; Ekspor</span>'
+      : '<i class="fa-solid fa-chevron-up"></i><span>Tutup Menu</span>';
+  }
+}
+
 function switchMainTab(id) {
   document.querySelectorAll('.tab-pane').forEach(p => p.classList.add('hidden'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   $(id)?.classList.remove('hidden');
   $('btn-' + id)?.classList.add('active');
+  $('btn-' + id)?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
   if (id === 'tab01') setTimeout(() => updateLeapfrog3D(), 60);
   if (id === 'tab02') setTimeout(() => renderSelectedBhView(), 60);
   if (id === 'tab03') setTimeout(() => { renderCrossSection('we'); renderDesignParamsTable(); calcFoundation(); }, 60);
@@ -3160,63 +3558,351 @@ function renderApps() {
   if ($('appTotal')) $('appTotal').textContent = MYAPPS.length;
 }
 
-/* 15. SMART JARVIS AI CHATBOT WITH SCIENTIFIC LINKS */
+/* 15. JARVIS AI SUPER-CHATBOT: VISUAL, ANIMATED, DOMAIN + GENERAL KNOWLEDGE + WIKIPEDIA/AI */
+function escHtml(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
 function buildRefLinks(q) {
   const enc = encodeURIComponent(q);
   return `
-    <div class="mt-2 pt-1.5 border-t border-emerald-800/50 text-[9.5px]">
-      <div class="text-amber-300 font-bold mb-1">Referensi &amp; Pencarian Lanjutan:</div>
-      <div class="flex flex-wrap gap-1">
-        <a class="px-2 py-0.5 rounded bg-emerald-950 border border-emerald-500/40 text-emerald-200" target="_blank" rel="noopener" href="https://en.wikipedia.org/w/index.php?search=${enc}">Wikipedia</a>
-        <a class="px-2 py-0.5 rounded bg-indigo-950 border border-indigo-500/40 text-indigo-200" target="_blank" rel="noopener" href="https://scholar.google.com/scholar?q=${enc}">Google Scholar</a>
-        <a class="px-2 py-0.5 rounded bg-teal-950 border border-teal-500/40 text-teal-200" target="_blank" rel="noopener" href="https://www.perplexity.ai/search?q=${enc}">Perplexity AI</a>
-        <a class="px-2 py-0.5 rounded bg-sky-950 border border-sky-500/40 text-sky-200" target="_blank" rel="noopener" href="https://www.google.com/search?q=${enc}">Google</a>
+    <div class="mt-2.5 pt-2 border-t border-emerald-500/30">
+      <div class="text-[9.5px] font-bold text-amber-300 uppercase tracking-wider mb-1.5 flex items-center gap-1">
+        <i class="fa-solid fa-compass text-cyan-400"></i> Eksplorasi Sumber &amp; Mesin AI Lanjutan:
+      </div>
+      <div class="grid grid-cols-3 gap-1.5 text-center font-mono">
+        <a class="ai-src-pill bg-emerald-950/90 border border-emerald-400/50 text-emerald-200" target="_blank" rel="noopener" href="https://id.wikipedia.org/w/index.php?search=${enc}"><i class="fa-brands fa-wikipedia-w"></i> Wiki ID</a>
+        <a class="ai-src-pill bg-teal-950/90 border border-teal-400/50 text-teal-200" target="_blank" rel="noopener" href="https://en.wikipedia.org/w/index.php?search=${enc}"><i class="fa-brands fa-wikipedia-w"></i> Wiki EN</a>
+        <a class="ai-src-pill bg-sky-950/90 border border-sky-400/50 text-sky-200" target="_blank" rel="noopener" href="https://www.google.com/search?q=${enc}"><i class="fa-brands fa-google"></i> Google</a>
+        <a class="ai-src-pill bg-indigo-950/90 border border-indigo-400/50 text-indigo-200" target="_blank" rel="noopener" href="https://scholar.google.com/scholar?q=${enc}"><i class="fa-solid fa-graduation-cap"></i> Scholar</a>
+        <a class="ai-src-pill bg-amber-950/90 border border-amber-400/50 text-amber-200" target="_blank" rel="noopener" href="https://www.perplexity.ai/search?q=${enc}"><i class="fa-solid fa-wand-magic-sparkles"></i> Perplexity</a>
+        <a class="ai-src-pill bg-purple-950/90 border border-purple-400/50 text-purple-200" target="_blank" rel="noopener" href="https://chatgpt.com/?q=${enc}"><i class="fa-solid fa-brain"></i> ChatGPT</a>
       </div>
     </div>
   `;
 }
 
+function buildVisualInfographic(title, badge, items, accent = 'emerald') {
+  const colors = {
+    emerald: ['#10b981', '#06b6d4', '#f59e0b', '#8b5cf6', '#f43f5e'],
+    cyan: ['#22d3ee', '#3b82f6', '#10b981', '#f59e0b', '#ec4899'],
+    amber: ['#f59e0b', '#10b981', '#0ea5e9', '#a855f7', '#ef4444']
+  };
+  const pal = colors[accent] || colors.emerald;
+  return `
+    <div class="my-2.5 p-2.5 rounded-xl bg-slate-950/90 border border-cyan-500/35 space-y-2">
+      <div class="flex items-center justify-between">
+        <span class="text-[10px] font-tech font-bold text-cyan-300 uppercase"><i class="fa-solid fa-chart-simple mr-1 text-amber-400"></i>${title}</span>
+        <span class="px-2 py-0.5 rounded-full bg-emerald-950 border border-emerald-500/40 text-emerald-300 text-[9px] font-bold">${badge}</span>
+      </div>
+      <div class="space-y-1.5">
+        ${items.map((it, idx) => `
+          <div>
+            <div class="flex justify-between text-[10px] mb-0.5">
+              <span class="text-slate-200 font-semibold">${it.label}</span>
+              <span class="font-bold" style="color:${pal[idx % pal.length]}">${it.valText}</span>
+            </div>
+            <div class="w-full h-2 bg-slate-900 rounded-full overflow-hidden">
+              <div class="ai-viz-bar" style="width:${Math.min(100, Math.max(8, it.pct))}%;background:${pal[idx % pal.length]}"></div>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+}
+
+function renderWelcomeChat() {
+  const b = $('chatBox');
+  if (!b) return;
+  b.innerHTML = '';
+  botSay(`
+    <div class="flex items-center justify-between mb-1.5">
+      <span class="px-2 py-0.5 rounded bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 font-tech font-black text-[9.5px]">JARVIS AI v12.3 · MULTI-DOMAIN</span>
+      <span class="text-[9.5px] text-amber-300 font-bold"><i class="fa-solid fa-sparkles mr-1"></i>Visual + Wikipedia + AI</span>
+    </div>
+    <p class="font-sans text-xs text-slate-100 leading-relaxed">
+      Halo! Saya <b>JARVIS AI</b>. Saya siap memberikan jawaban <b>detail, terstruktur, dan disertai grafik visual animasi</b> baik untuk topik <b>Leapfrog Geo 3D, Borehole Log, Lab Zone AC, Lugeon, Bendungan</b> maupun <b>semua pertanyaan umum di luar topik proyek</b> (sains, teknologi, sejarah, kesehatan, ekonomi, dll.) lengkap dengan tautan <b>Wikipedia, Google, Scholar, Perplexity &amp; ChatGPT</b>!
+    </p>
+    ${buildVisualInfographic('Cakupan Basis Pengetahuan Aktif', '100% READY', [
+      { label: 'Database 16 Borehole & 17 Test Pit Tujuh Bukit', valText: '631,9 m Core', pct: 100 },
+      { label: 'Model Geologi 3D Implicit FastRBF & Lab Zone AC', valText: '9 Uji Lab + 3D', pct: 95 },
+      { label: 'Ensiklopedia Umum Live (Wikipedia ID/EN + Multi-AI)', valText: 'Unlimited Topik', pct: 100 }
+    ], 'emerald')}
+  ` + buildRefLinks('Leapfrog Geo 3D geological modeling borehole log'));
+}
+
+function clearChatHistory() {
+  renderWelcomeChat();
+  toast('Riwayat percakapan JARVIS AI dibersihkan.');
+}
+
 function toggleChat() {
   const p = $('aiDrawer');
-  p.classList.toggle('hidden'); p.classList.toggle('flex');
+  p.classList.toggle('hidden');
+  p.classList.toggle('flex');
   if (!p.dataset.init) {
     p.dataset.init = '1';
-    botSay('Selamat datang di <b>JARVIS AI — Leapfrog Geo 3D &amp; Borlog Tujuh Bukit</b>! Tanyakan tentang pemodelan <b>FastRBF 3D</b>, profil <b>16 borehole</b> (misal <i>BH-01R</i>, <i>GTH-14-126</i>), <b>17 test pit</b>, <b>9 Lab Zone AC</b>, uji <b>Lugeon</b>, atau <b>Stabilitas Dam 5 &amp; 6A</b>.' + buildRefLinks('Leapfrog Geo implicit 3D geological modeling borehole log'));
-    $('chatChips').innerHTML = ['Model 3D FastRBF', 'Lab Zone AC (9)', 'Uji Lugeon & Grouting', 'Sesar GTH-14-126', 'Stabilitas Dam 5 & 6A'].map(x => `<button type="button" class="px-2 py-0.5 rounded bg-slate-800 border border-emerald-500/40 text-emerald-200 text-[10px] cursor-pointer" onclick="$('chatIn').value='${x}';sendChat()">${x}</button>`).join('');
+    renderWelcomeChat();
+    $('chatChips').innerHTML = [
+      '🧊 Model 3D FastRBF',
+      '🧪 Lab Zone AC (9)',
+      '💧 Uji Lugeon & Grouting',
+      '🌋 Sesar GTH-14-126',
+      '🛡️ Stabilitas Dam 5 & 6A',
+      '🌌 Apa itu Lubang Hitam?',
+      '⚡ Cara Kerja PLTA'
+    ].map(x => `<button type="button" class="px-2.5 py-1 rounded-lg bg-slate-800/95 hover:bg-emerald-900 border border-emerald-500/45 text-emerald-200 text-[10px] whitespace-nowrap cursor-pointer transition" onclick="$('chatIn').value='${x.replace(/^[^a-zA-Z0-9]+/, '')}';sendChat()">${x}</button>`).join('');
   }
 }
 
 function botSay(html) {
   const b = $('chatBox');
-  b.insertAdjacentHTML('beforeend', `<div class="p-2.5 rounded-xl bg-slate-900 border border-emerald-500/40 text-slate-200 leading-relaxed">${html}</div>`);
+  b.insertAdjacentHTML('beforeend', `<div class="ai-card-rich text-slate-100 leading-relaxed">${html}</div>`);
   b.scrollTop = b.scrollHeight;
 }
 
-function sendChat() {
+async function fetchWikiSummary(query) {
+  const cleanQ = query.replace(/^(apa itu|siapa itu|jelaskan tentang|jelaskan|bagaimana cara kerja|bagaimana|mengapa|kenapa|pengertian|definisi|sejarah)\s+/i, '').replace(/[?!.]+$/g, '').trim();
+  const tryLangs = ['id', 'en'];
+  for (const lang of tryLangs) {
+    try {
+      const searchUrl = `https://${lang}.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(cleanQ)}&format=json&origin=*&srlimit=1`;
+      const sRes = await fetch(searchUrl);
+      if (!sRes.ok) continue;
+      const sData = await sRes.json();
+      const topHit = sData?.query?.search?.[0];
+      if (!topHit) continue;
+      const sumUrl = `https://${lang}.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(topHit.title)}`;
+      const pRes = await fetch(sumUrl);
+      if (!pRes.ok) continue;
+      const pData = await pRes.json();
+      if (pData && pData.extract) {
+        return {
+          lang: lang.toUpperCase(),
+          title: pData.title,
+          desc: pData.description || 'Artikel Ensiklopedia Wikipedia',
+          extract: pData.extract,
+          thumb: pData.thumbnail?.source || null,
+          url: pData.content_urls?.desktop?.page || `https://${lang}.wikipedia.org/wiki/${encodeURIComponent(pData.title)}`
+        };
+      }
+    } catch (e) {}
+  }
+  return null;
+}
+
+async function sendChat() {
   const inp = $('chatIn');
   const q = inp.value.trim();
   if (!q) return;
   inp.value = '';
   const b = $('chatBox');
-  b.insertAdjacentHTML('beforeend', `<div class="p-2 rounded-xl bg-emerald-500 text-slate-950 font-bold text-right ml-8">${q}</div>`);
-  const ql = q.toLowerCase();
+  b.insertAdjacentHTML('beforeend', `
+    <div class="flex justify-end ai-msg-anim">
+      <div class="px-3.5 py-2.5 rounded-2xl rounded-tr-sm bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 font-sans font-bold text-xs max-w-[88%] shadow-md">
+        ${escHtml(q)}
+      </div>
+    </div>
+  `);
+  b.scrollTop = b.scrollHeight;
 
+  const typingId = 'typing_' + Date.now();
+  b.insertAdjacentHTML('beforeend', `
+    <div id="${typingId}" class="p-3 rounded-xl bg-slate-900/90 border border-cyan-500/40 flex items-center gap-2.5 ai-msg-anim">
+      <span class="ai-typing-dot"></span><span class="ai-typing-dot"></span><span class="ai-typing-dot"></span>
+      <span class="text-[10.5px] text-cyan-300 font-mono">JARVIS AI menyusun analisis visual &amp; mencari referensi…</span>
+    </div>
+  `);
+  b.scrollTop = b.scrollHeight;
+
+  const ql = q.toLowerCase();
+  const removeTyping = () => { const el = $(typingId); if (el) el.remove(); };
+
+  // 1. Check Specific Borehole Match (16 BH)
   const bhHit = BOREHOLES.find(x => ql.includes(x.id.toLowerCase()) || ql.includes(x.bsiId.toLowerCase()));
   if (bhHit) {
     selectBorehole(bhHit.id);
-    botSay(`<b>${bhHit.id} (${bhHit.bsiId})</b> — ${bhHit.loc}<br>• Koordinat: ${bhHit.easting} mE, ${bhHit.northing} mN | Elev: +${bhHit.elev} mRL<br>• Total Depth: <b>${bhHit.depth} m</b> | GWL: <b>${bhHit.gwl} m</b><br>• Lugeon: <b>${bhHit.lugeon.lu > 0 ? bhHit.lugeon.lu + ' Lu (' + bhHit.lugeon.flow + ')' : bhHit.lugeon.flow}</b><br>• Lapisan: ${bhHit.runs.map(r => `${r.f}-${r.t}m ${r.uscs} (${r.weath})`).join('; ')}` + buildRefLinks(bhHit.bsiId + ' geotechnical borehole log'));
+    removeTyping();
+    const rockRuns = bhHit.runs.filter(r => r.rqd > 0);
+    const avgRqd = rockRuns.length ? Math.round(rockRuns.reduce((a, r) => a + r.rqd, 0) / rockRuns.length) : 0;
+    botSay(`
+      <div class="flex items-center justify-between mb-1.5">
+        <span class="px-2 py-0.5 rounded bg-amber-500 text-slate-950 font-tech font-black text-[10px]">DETAIL BOREHOLE LOG</span>
+        <span class="text-cyan-300 font-bold text-[10px]">${bhHit.bsiId}</span>
+      </div>
+      <div class="font-sans text-xs space-y-1.5">
+        <p><b>${bhHit.id} (${bhHit.bsiId})</b> berada pada zona <b>${bhHit.loc}</b> dengan koordinat UTM Zone 50S <b>${fmt(bhHit.easting,2)} mE, ${fmt(bhHit.northing,2)} mN</b> dan elevasi collar <b>+${fmt(bhHit.elev,2)} mRL</b>.</p>
+        <ul class="list-disc pl-4 space-y-0.5 text-[11px] text-slate-200">
+          <li><b>Total Kedalaman &amp; Rig:</b> ${fmt(bhHit.depth,1)} m menggunakan mesin bor <i>${bhHit.rig}</i> (Logger: ${bhHit.logger}).</li>
+          <li><b>Muka Air Tanah (GWL):</b> ${fmt(bhHit.gwl,2)} m bgs (rentang pantau ${fmt(bhHit.gwlRange.min,2)} – ${fmt(bhHit.gwlRange.max,2)} m).</li>
+          <li><b>Hasil Uji Packer Lugeon:</b> ${bhHit.lugeon.lu > 0 ? `${bhHit.lugeon.lu} Lu (${bhHit.lugeon.k} m/s, aliran <i>${bhHit.lugeon.flow}</i>)` : bhHit.lugeon.flow}.</li>
+          <li><b>Susunan Stratigrafi:</b> ${bhHit.runs.map(r => `<b>${r.f}–${r.t}m</b> ${r.uscs} [${r.weath}]`).join(' → ')}.</li>
+        </ul>
+      </div>
+      ${buildVisualInfographic(`Profil Parameter ${bhHit.bsiId}`, `Elev +${bhHit.elev}m`, [
+        { label: 'Total Kedalaman Pengeboran', valText: `${bhHit.depth} m`, pct: (bhHit.depth / 60) * 100 },
+        { label: 'Rata-rata RQD Zona Batuan', valText: `${avgRqd}%`, pct: avgRqd },
+        { label: 'Permeabilitas Lugeon (Kedap < 1 Lu)', valText: bhHit.lugeon.lu > 0 ? `${bhHit.lugeon.lu} Lu` : 'N/A', pct: Math.max(10, (bhHit.lugeon.lu / 0.35) * 100) }
+      ], 'amber')}
+    ` + buildRefLinks(`${bhHit.bsiId} geotechnical borehole log Tujuh Bukit`));
     return;
   }
 
-  let ans = 'Ekosistem <b>Leapfrog Geo &amp; Borlog 3D</b> menyinkronkan <b>16 borehole (631,9 m)</b>, <b>17 test pit</b>, <b>9 uji lab Material Zone AC</b>, dan studi stabilitas <b>Pad C Extension (+49 Mt) &amp; Decommissioning Dam 5/6A</b>.';
-  if (ql.includes('fastrbf') || ql.includes('3d') || ql.includes('leapfrog')) ans = '<b>Pemodelan Geologi 3D Implicit (FastRBF):</b> Menginterpolasi batas litologi (Top Soil/Fill, Residual Soil, XW Saprolite, Dacite HW-MW, dan Fresh Dacite/Diorite) langsung dari interval bor dengan galian (cut) <b>1,70 Mm³</b> dan timbunan struktural (fill) <b>5,50 Mm³</b>.';
-  else if (ql.includes('zone ac') || ql.includes('lab')) ans = '<b>Hasil Lab Material Properties Zone AC (TM-ZAC-ITPEAR033-001..010):</b> 9 sampel tanah Stage 1 diklasifikasikan sebagai <b>SC, GC, CL, dan GW-GM</b> dengan nilai <b>MDD 1,514–1,822 g/cm³</b>, <b>OMC 10,03–20,53%</b>, dan <b>Gs 2,35–3,35</b>.';
-  else if (ql.includes('lugeon')) ans = '<b>Uji Packer Lugeon (Tabel 2.5):</b> Seluruh 12 borehole Pad C yang diuji menghasilkan nilai <b>0,014 Lu (BH-06R) hingga 0,308 Lu (BH-12)</b> (kedap air; grouting tirai masif tidak diperlukan).';
-  else if (ql.includes('14-126') || ql.includes('sesar')) ans = '<b>GTH-14-126 (Dam 05 / Geotech Katak):</b> Kedalaman 25,0 m, menembus Top Soil & Colluvium (0–4,5m), Saprolite (4,5–9,8m), dan <b>Diorite segar (9,8–25,0m)</b> dengan <b>Fault Zone bersudut 30°</b> (slickenside & gouge clay).';
-  else if (ql.includes('dam 5') || ql.includes('6a') || ql.includes('stabilitas')) ans = '<b>Stabilitas &amp; Rembesan Dam 5 &amp; 6A Closure:</b> FoS Statik <b>1,959–4,210</b> (CHS), Gempa OBE <b>1,239–3,308</b>, deformasi gempa MDE <b>5,0 cm</b> (&lt; batas 200 cm), dan Piping SF <b>3,07–4,23</b>.';
+  // 2. Domain-Specific Knowledge Base (Detailed + Visual Charts)
+  if (ql.includes('fastrbf') || ql.includes('leapfrog') || ql.includes('implisit') || ql.includes('implicit') || (ql.includes('3d') && !ql.includes('printer'))) {
+    removeTyping();
+    botSay(`
+      <div class="flex items-center justify-between mb-1.5">
+        <span class="px-2 py-0.5 rounded bg-emerald-500 text-slate-950 font-tech font-black text-[10px]">LEAPFROG GEO 2026 · FASTRBF 3D</span>
+        <span class="text-emerald-300 text-[10px] font-bold">IMPLICIT ENGINE</span>
+      </div>
+      <div class="font-sans text-xs space-y-1.5">
+        <p><b>Pemodelan Geologi 3D Implisit (Fast Radial Basis Function / FastRBF)</b> membangun permukaan kontak litologi secara matematis langsung dari titik-titik data bor tanpa perlu digitasi poligon manual:</p>
+        <div class="p-2 rounded-lg bg-slate-950 border-l-2 border-emerald-400 font-mono text-[10.5px] text-emerald-300">
+          s(x) = Σ λᵢ φ(||x − xᵢ||) + P(x) = 0
+        </div>
+        <ul class="list-disc pl-4 space-y-1 text-[11px] text-slate-200">
+          <li><b>Desurveying Minimum Curvature:</b> Menghitung lintasan 3D lubang bor secara presisi dari tabel <i>Collar</i> dan <i>Survey</i>.</li>
+          <li><b>Kronostratigrafi Otomatis:</b> Memodelkan urutan <i>Erosion Surface</i> (Top Soil/Fill), <i>Deposit Surface</i> (Residual &amp; Saprolite), hingga <i>Intrusion/Basement</i> (Dacite &amp; Diorite).</li>
+          <li><b>Volume Desain Pad C Extension:</b> Galian (<i>Cut</i>) sebesar <b>1,70 Juta m³</b> dan timbunan struktural (<i>Fill</i>) sebesar <b>5,50 Juta m³</b> untuk kapasitas tambahan <b>+49 Mt</b>.</li>
+        </ul>
+      </div>
+      ${buildVisualInfographic('Volumetrik 3D Pad C Extension (Juta m³)', '+49 Mt Ore', [
+        { label: 'Galian Tanah Lunak / Cut Volume', valText: '1,70 Juta m³', pct: 25 },
+        { label: 'Timbunan Struktural / Structural Fill', valText: '5,50 Juta m³', pct: 55 },
+        { label: 'Batuan Dasar Dacite Kompeten (SW-FR)', valText: '21,50 Juta m³', pct: 100 }
+      ], 'emerald')}
+    ` + buildRefLinks('FastRBF implicit 3D geological modeling Leapfrog Geo'));
+    return;
+  }
 
-  botSay(ans + buildRefLinks(q + ' Leapfrog Geo geotechnical engineering'));
+  if (ql.includes('zone ac') || ql.includes('lab') || ql.includes('mdd') || ql.includes('omc')) {
+    removeTyping();
+    botSay(`
+      <div class="flex items-center justify-between mb-1.5">
+        <span class="px-2 py-0.5 rounded bg-purple-500 text-white font-tech font-black text-[10px]">LAB MATERIAL ZONE AC</span>
+        <span class="text-purple-300 text-[10px] font-bold">9 PENGUJIAN</span>
+      </div>
+      <div class="font-sans text-xs space-y-1.5">
+        <p>Hasil pengujian laboratorium <b>Material Properties Zone AC</b> (Laporan <code>TM-ZAC-ITPEAR033-001 s/d 010</code>, kode sampel <b>6A s/d 6K</b>) pada Pad C Extension Stage 1:</p>
+        <ul class="list-disc pl-4 space-y-1 text-[11px] text-slate-200">
+          <li><b>Klasifikasi Tanah USCS:</b> Didominasi oleh <b>SC</b> (Clayey Sand with Gravel), <b>GC</b> (Clayey Gravel with Sand), <b>CL</b> (Lean Clay), dan <b>GW-GM</b> (Well-Graded Gravel).</li>
+          <li><b>Kepadatan Kering Maksimum (MDD):</b> Berkisar antara <b>1,514 g/cm³</b> (sampel 6I) hingga <b>1,822 g/cm³</b> (sampel 6G GW-GM).</li>
+          <li><b>Kadar Air Optimum (OMC) &amp; Gs:</b> OMC antara <b>10,03% – 20,53%</b> dengan Specific Gravity (Gs) <b>2,35 – 3,35</b>.</li>
+        </ul>
+      </div>
+      ${buildVisualInfographic('Perbandingan MDD & OMC Lab Zone AC', 'ASTM D698', [
+        { label: 'MDD Tertinggi — 6G (GW-GM Gravel)', valText: '1,822 g/cm³ (OMC 10,0%)', pct: 95 },
+        { label: 'MDD Rata-rata — 9 Sampel Zone AC', valText: '1,691 g/cm³ (OMC 16,5%)', pct: 84 },
+        { label: 'MDD Minimum — 6I/6J (SC Stage 1)', valText: '1,514 g/cm³ (OMC 20,5%)', pct: 72 }
+      ], 'cyan')}
+    ` + buildRefLinks('ASTM D698 Proctor compaction MDD OMC USCS soil classification'));
+    return;
+  }
+
+  if (ql.includes('lugeon') || ql.includes('grouting') || ql.includes('falling') || ql.includes('permeabilitas')) {
+    removeTyping();
+    botSay(`
+      <div class="flex items-center justify-between mb-1.5">
+        <span class="px-2 py-0.5 rounded bg-cyan-500 text-slate-950 font-tech font-black text-[10px]">HIDROGEOLOGI · LUGEON &amp; SLUG TEST</span>
+        <span class="text-cyan-300 text-[10px] font-bold">KEDAP AIR</span>
+      </div>
+      <div class="font-sans text-xs space-y-1.5">
+        <p>Evaluasi konduktivitas hidrolik lapangan pada 13 titik bor Pad C Extension menunjukkan massa batuan dasar bersifat sangat kedap air:</p>
+        <ul class="list-disc pl-4 space-y-1 text-[11px] text-slate-200">
+          <li><b>Uji Packer Lugeon (12 BH Diuji):</b> Nilai berkisar <b>0,014 Lu</b> (BH-06_R) hingga <b>0,308 Lu</b> (BH-12) dengan konduktivitas <i>k</i> = <b>2,28×10⁻⁹ – 3,74×10⁻⁸ m/s</b>. Karena seluruhnya &lt; 1 Lu, <i>curtain grouting</i> masif tidak diperlukan.</li>
+          <li><b>Falling Head Test (29 Pengujian):</b> Metode Hvorslev &amp; Bouwer-Rice menghasilkan <i>k</i> antara <b>1,00×10⁻¹² m/s</b> hingga <b>4,92×10⁻⁵ m/s</b>.</li>
+        </ul>
+      </div>
+      ${buildVisualInfographic('Hasil Uji Lugeon Terpilih (Ambang Batas = 1,0 Lu)', 'ALL < 0,31 Lu', [
+        { label: 'KP-BH-2025-06_R (Turbulent)', valText: '0,014 Lu', pct: 12 },
+        { label: 'KP-BH-2025-08 (Dilation)', valText: '0,091 Lu', pct: 32 },
+        { label: 'KP-BH-2025-11_R (Turbulent)', valText: '0,216 Lu', pct: 70 },
+        { label: 'KP-BH-2025-12 (Turbulent Max)', valText: '0,308 Lu', pct: 98 }
+      ], 'cyan')}
+    ` + buildRefLinks('Lugeon packer test hydraulic conductivity Hvorslev Bouwer Rice'));
+    return;
+  }
+
+  if (ql.includes('14-126') || ql.includes('sesar') || ql.includes('dam 5') || ql.includes('6a') || ql.includes('stabilitas')) {
+    removeTyping();
+    botSay(`
+      <div class="flex items-center justify-between mb-1.5">
+        <span class="px-2 py-0.5 rounded bg-rose-500 text-white font-tech font-black text-[10px]">DAM 5 &amp; 6A CLOSURE + SESAR 30°</span>
+        <span class="text-amber-300 text-[10px] font-bold">TERKENDALI</span>
+      </div>
+      <div class="font-sans text-xs space-y-1.5">
+        <p><b>Tinjauan Stabilitas &amp; Rembesan Decommissioning Dam No. 5 dan No. 6A</b> (Laporan <code>TL-GEO-SEEP/STAB/2026/001</code>) serta korelasi lubang bor historis <b>GTH-14-126</b>:</p>
+        <ul class="list-disc pl-4 space-y-1 text-[11px] text-slate-200">
+          <li><b>Zona Sesar GTH-14-126 (Dam 05):</b> Dijumpai zona hancuran (<i>Fault Zone</i>) bersudut <b>30°</b> pada batuan <i>Diorite</i> segar (9,8–25,0 m) dengan pengisi <i>gouge clay</i> dan kuarsa.</li>
+          <li><b>Faktor Keamanan Stabilitas:</b> Statik <b>FoS 1,959 – 4,210</b> (aman &ge; 1,50), Gempa OBE <b>FoS 1,239 – 3,308</b> (aman &ge; 1,20), deformasi gempa MDE <b>5,0 cm</b> (&lt; batas 200 cm), dan <i>Piping SF</i> <b>3,07 – 4,23</b>.</li>
+        </ul>
+      </div>
+      ${buildVisualInfographic('Faktor Keamanan Stabilitas Dam 5 & 6A', 'VERIFIED', [
+        { label: 'Stabilitas Statik (Min 1,50)', valText: 'FoS 1,959 – 4,210', pct: 92 },
+        { label: 'Stabilitas Gempa OBE (Min 1,20)', valText: 'FoS 1,239 – 3,308', pct: 78 },
+        { label: 'Keamanan Piping / Erosi Internal (Min 3,00)', valText: 'SF 3,07 – 4,23', pct: 88 }
+      ], 'amber')}
+    ` + buildRefLinks('Dam decommissioning slope stability seepage piping Makdisi Seed'));
+    return;
+  }
+
+  // 3. GENERAL KNOWLEDGE ENGINE (OUTSIDE PROJECT TOPICS — LIVE WIKIPEDIA ID/EN + VISUAL SUMMARY + MULTI-AI)
+  const wiki = await fetchWikiSummary(q);
+  removeTyping();
+
+  if (wiki) {
+    const sentences = wiki.extract.split(/(?<=[.!?])\s+/).filter(Boolean);
+    const keyPoints = sentences.slice(0, 3);
+    const thumbHtml = wiki.thumb
+      ? `<img src="${wiki.thumb}" alt="${escHtml(wiki.title)}" class="w-20 h-20 object-cover rounded-xl border border-cyan-400/50 shrink-0 shadow-md">`
+      : `<div class="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500 to-indigo-600 text-white flex items-center justify-center text-xl shrink-0 shadow"><i class="fa-solid fa-globe"></i></div>`;
+
+    botSay(`
+      <div class="flex items-center justify-between mb-2">
+        <span class="px-2 py-0.5 rounded bg-gradient-to-r from-cyan-500 to-indigo-500 text-white font-tech font-black text-[9.5px]">ENSIKLOPEDIA PENGETAHUAN UMUM · WIKIPEDIA ${wiki.lang}</span>
+        <a href="${wiki.url}" target="_blank" rel="noopener" class="text-[9.5px] text-amber-300 underline font-bold">Buka Artikel &nearr;</a>
+      </div>
+      <div class="flex gap-3 items-start mb-2">
+        ${thumbHtml}
+        <div class="min-w-0 flex-1 font-sans">
+          <div class="font-bold text-sm text-cyan-200 leading-snug">${escHtml(wiki.title)}</div>
+          <div class="text-[10px] text-emerald-300 font-mono mb-1">${escHtml(wiki.desc)}</div>
+          <p class="text-[11.5px] text-slate-100 leading-relaxed">${escHtml(wiki.extract)}</p>
+        </div>
+      </div>
+      ${keyPoints.length > 1 ? `
+        <div class="p-2.5 rounded-xl bg-slate-950/85 border border-indigo-500/35 font-sans text-[11px] space-y-1">
+          <div class="font-mono text-[9.5px] font-bold text-amber-300 uppercase"><i class="fa-solid fa-list-check mr-1"></i>Poin Ringkasan Utama:</div>
+          <ul class="list-disc pl-4 space-y-0.5 text-slate-200">
+            ${keyPoints.map(pt => `<li>${escHtml(pt)}</li>`).join('')}
+          </ul>
+        </div>
+      ` : ''}
+      ${buildVisualInfographic('Indikator Referensi & Relevansi Topik', `WIKI ${wiki.lang}`, [
+        { label: 'Kelengkapan Ringkasan Ensiklopedia', valText: `${wiki.extract.length} Karakter`, pct: Math.min(100, Math.round(wiki.extract.length / 4)) },
+        { label: 'Ketersediaan Sumber Lintas Mesin AI', valText: '6 Portal Aktif', pct: 100 }
+      ], 'cyan')}
+    ` + buildRefLinks(q));
+  } else {
+    botSay(`
+      <div class="flex items-center justify-between mb-1.5">
+        <span class="px-2 py-0.5 rounded bg-indigo-500 text-white font-tech font-black text-[9.5px]">JARVIS AI · ANALISIS LINTAS TOPIK</span>
+        <span class="text-cyan-300 text-[10px] font-bold">MULTI-SEARCH</span>
+      </div>
+      <div class="font-sans text-xs space-y-1.5 text-slate-100">
+        <p>Pertanyaan Anda mengenai <b>"${escHtml(q)}"</b> berada di luar basis data lokal geoteknik Tujuh Bukit. Untuk memperoleh penjelasan mendalam, jurnal ilmiah, dan diskusi interaktif terkini mengenai topik tersebut, silakan klik langsung portal ensiklopedia dan asisten AI di bawah ini:</p>
+      </div>
+      ${buildVisualInfographic('Rekomendasi Jalur Penelusuran Topik', '6 SUMBER', [
+        { label: 'Ensiklopedia Terbuka (Wikipedia ID & EN)', valText: 'Definisi & Sejarah', pct: 95 },
+        { label: 'Pencarian Web & Jurnal (Google & Scholar)', valText: 'Referensi Ilmiah', pct: 100 },
+        { label: 'Asisten AI Generatif (Perplexity & ChatGPT)', valText: 'Analisis Mendalam', pct: 100 }
+      ], 'amber')}
+    ` + buildRefLinks(q));
+  }
 }
+
 
 /* 16. BOOTSTRAP INITIALIZATION */
 window.addEventListener('DOMContentLoaded', () => {
@@ -3234,7 +3920,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (p === 75) $('bootStage').textContent = 'Mengkalibrasi Strip Log SVG, Lugeon, WebGIS & 12 Word…';
     if (p >= 100) {
       clearInterval(iv);
-      $('bootStage').textContent = 'LEAPFROG GEO & BORLOG 3D COMMAND CENTRE PRO v12.0 Siap.';
+      $('bootStage').textContent = 'LEAPFROG GEO & BORLOG 3D COMMAND CENTRE PRO v12.3 Siap.';
       setTimeout(() => { if (!holdBoot) dismissLoadingScreen(); }, 2200);
     }
   }, 300);
